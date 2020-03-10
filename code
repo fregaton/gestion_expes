@@ -119,7 +119,7 @@ def hordes_print(tab_expe):
                 to_print += ":hordes_fleche: {}\n".format(tab_expe[i][j])
         to_print += "\n"
     to_print += "//Merci de respecter la composition des équipes, les espions russes sont partout !//\n"
-    to_print += "**{}**".format(get_expression_communiste())
+    to_print += "**{}**".format(get_expression_us())
 
     print(to_print)
     
