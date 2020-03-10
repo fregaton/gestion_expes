@@ -18,11 +18,11 @@ for i in range (nombre_expes):
 def choix_citoyen(ligne, colonne):
     
     if len(leads_expe) != 0:
-        indice_cit=(attaque*ligne+attaque_veille*colonne)%len(leads_expe)
+        indice_cit=(attaque*(ligne+1)+attaque_veille*(colonne+1))%len(leads_expe)
         cit= leads_expe[indice_cit]
         leads_expe.pop(indice_cit)
     else:
-        indice_cit=(attaque*ligne+attaque_veille*colonne)%len(sacs_expe)
+        indice_cit=(attaque*(ligne+1)+attaque_veille*(colonne+1))%len(sacs_expe)
         cit= sacs_expe[indice_cit]
         sacs_expe.pop(indice_cit)
     return cit
