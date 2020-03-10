@@ -13,7 +13,7 @@ sacs_expe = ['cit1','cit2','cit3','cit4','cit5','cit6','cit7','cit8','cit9','cit
 tableau_expes=np.empty((nombre_expes,nombre_pers+1), dtype='U20')
 
 for i in range (nombre_expes):
-    tableau_expes[i,0]='Expedition '+str(i+1)
+    tableau_expes[i,0]='Expedition '+str(i+1)+':'
     
 def choix_citoyen(ligne, colonne):
     
