@@ -1,0 +1,34 @@
+import numpy as np
+
+attaque = 51
+attaque_veille = 37
+nombre_expes = 6
+nombre_pers = 4
+
+leads_expe= ['lead1','lead2','lead3','lead4','lead5','lead6']
+sacs_expe = ['cit1','cit2','cit3','cit4','cit5','cit6','cit7','cit8','cit9','cit10','cit11','cit12','cit13','cit14','cit15','cit16','cit17','cit18']
+
+
+
+tableau_expes=np.empty((nombre_expes,nombre_pers+1), dtype='U20')
+
+for i in range (nombre_expes):
+    tableau_expes[i,0]='Expedition '+str(i+1)
+    
+def choix_citoyen(ligne, colonne):
+    
+    if len(leads_expe) != 0:
+        indice_cit=(attaque*ligne+attaque_veille*colonne)%len(leads_expe)
+        cit= leads_expe[indice_cit]
+        leads_expe.pop(indice_cit)
+    else:
+        indice_cit=(attaque*ligne+attaque_veille*colonne)%len(sacs_expe)
+        cit= sacs_expe[indice_cit]
+        sacs_expe.pop(indice_cit)
+    return cit
+
+for colonne in range(1,nombre_pers+1):
+    for ligne in range(nombre_expes):
+        tableau_expes[ligne, colonne]=choix_citoyen(ligne,colonne)
+
+print(tableau_expes)
